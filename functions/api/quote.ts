@@ -22,15 +22,7 @@ export const onRequest: PagesFunction = async (context) => {
       return new Response('Missing required fields', { status: 400 });
     }
 
-    // TODO: Wire up email service
-    // Options:
-    // 1. Resend (resend.com) — recommended for this use case
-    // 2. SendGrid (sendgrid.com)
-    // 3. Mailgun (mailgun.com)
-    // 4. AWS SES
-
-    // Example with Resend (requires RESEND_API_KEY environment variable):
-    /*
+    // Send email via Resend
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -59,24 +51,11 @@ export const onRequest: PagesFunction = async (context) => {
       console.error('Email send failed:', await response.text());
       return new Response('Failed to send quote request', { status: 500 });
     }
-    */
 
-    // TODO: Log to database for lead tracking
-    // You may want to store leads in:
-    // - D1 (Cloudflare's SQLite)
-    // - Supabase
-    // - Firebase
-    // - Your own backend
+    // Log quote to console (TODO: integrate with CRM/database later)
+    console.log('Quote request received and emailed:', { name, phone, service, area });
 
-    console.log('Quote request received:', { name, phone, service, area });
-
-    // TODO: Remove this after email is wired up. For now, return success.
-    // In production, you'll want to:
-    // 1. Send email to business email
-    // 2. Send confirmation email to customer (if email provided)
-    // 3. Log to analytics/CRM
-
-    // Redirect to thank you page or return JSON success
+    // Return success to user
     return new Response(
       JSON.stringify({
         success: true,
