@@ -11,6 +11,23 @@ interface Props {
 
 const { title, description, keyword, serviceSlug } = Astro.props;
 const canonicalUrl = new URL(`/${serviceSlug}`, Astro.url).href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": title.split('|')[0].trim(),
+  "description": description,
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": config.businessName,
+    "telephone": config.phone,
+    "email": config.email,
+    "areaServed": ["Parksville", "Qualicum Beach", "Oceanside"],
+    "url": "https://parksvillehandyman.ca"
+  },
+  "url": canonicalUrl,
+  "serviceType": "Handyman"
+};
 ---
 
 <BaseLayout
@@ -19,6 +36,8 @@ const canonicalUrl = new URL(`/${serviceSlug}`, Astro.url).href;
   keywords={keyword}
   canonicalUrl={canonicalUrl}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Breadcrumb -->
     <nav class="py-6 text-sm text-slate-600">

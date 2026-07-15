@@ -24,13 +24,13 @@ export const config = {
 export const pages = {
   home: {
     title: 'Handyman Services in Parksville & Qualicum Beach',
-    description: 'Trusted local handyman for deck repair, drywall, gutters, fences & more in Parksville, Qualicum Beach, and Oceanside.',
+    description: 'Trusted local handyman in Parksville, Qualicum Beach & Oceanside for deck repair, drywall, gutter cleaning, fence repair, and more. Free estimates. Same-week service available.',
     keyword: 'handyman parksville',
   },
   services: {
     deckRepair: {
       title: 'Deck Repair & Maintenance in Parksville | Local Experts',
-      description: 'Expert deck repair, staining, and maintenance in Parksville. Coastal weather damage fixed fast.',
+      description: 'Professional deck repair, staining & sealing in Parksville. Rotten boards, sagging, ledger damage fixed. Coastal weather specialists. Free estimates.',
       keyword: 'deck repair parksville',
       slug: 'deck-repair',
     },
