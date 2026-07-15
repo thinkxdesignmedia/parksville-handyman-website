@@ -1,0 +1,87 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.drywallRepair;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Drywall takes damage fast—doors punch holes, settling cracks drywall, water stains from roof leaks. We patch, mud, sand, and finish. Paint-ready results, no tape lines or seams visible.
+  </fragment>
+
+  ## Common Drywall Problems
+
+  **Impact holes** — A doorknob through drywall, a corner hit by furniture, or a dropped object leaves a clean hole. Small holes (under 6 inches) are cheap to fix. Larger ones take more material and time.
+
+  **Cracks** — Settlement cracks start as thin lines and widen over months. They often follow the tape line where two drywall sheets meet. On the Island, seasonal moisture changes make cracks worse in fall/winter.
+
+  **Water stains** — Usually mean a roof, plumbing, or gutter leak. The stain sits even after you fix the leak because the paper's been watermarked. Sealing primer is needed before paint, or the stain will bleed through.
+
+  **Tape lifting** — The joint compound under the tape dried too fast or wasn't applied thick enough. Tape peels off the wall. This usually means the drywall was taped in dry or cold conditions, and the compound shrunk.
+
+  ## How We Fix It
+
+  **Small holes (under 6 inches)** — We use a spackling compound or lightweight joint compound, feather it out 6–8 inches from the hole edge, sand smooth, prime, and paint. One or two coats depending on how well it blends.
+
+  **Medium holes (6–12 inches)** — We cut out a clean square, patch with a drywall square, tape the seams, mud (3 coats minimum), sand, prime, and paint. Sandless patching compounds work well for small-to-medium patches.
+
+  **Large holes or damage** — Full drywall sheet replacement in the affected area. We match the existing drywall thickness (usually 1/2 inch on interior walls), tape, mud, sand, and finish.
+
+  **Cracks** — We clean out loose drywall, apply mesh tape, then three coats of joint compound (each coat needs to dry 24 hours between applications). The wider the crack, the more coats needed. Feathering 12+ inches on each side makes the repair invisible.
+
+  **Water stains** — After you've fixed the leak, we apply blocking primer (Zinsser or Kilz) to seal the stain, then paint. If the damage is extensive, affected drywall may need replacement to prevent mold.
+
+  ## Why It Takes Multiple Coats
+
+  Joint compound shrinks as it dries (typically 10–20%). A single thick coat cracks and shrinks into a valley. Three thinner coats (with sanding between) build up, and the final coat is feathered wide enough that you can't see the seam edge. Each coat needs proper drying time—usually 24 hours in normal conditions, longer in cold or humid weather.
+
+  ## When to Replace vs. Repair
+
+  - **Repair if:** Damage is localized (hole, crack, water stain), and the drywall core is intact.
+  - **Replace if:** Water damage is soft or crumbly, mold is visible, or the damage is larger than half a sheet.
+
+  ## Cost & Timeline
+
+  - Small hole patch: $150–$400
+  - Medium patch (6–12 inches): $300–$700
+  - Water stain seal and paint: $200–$500
+  - Full sheet replacement: $800–$1,500
+
+  Repairs usually take 2–5 days (accounting for drying time between coats).
+
+  ## Pro Tips
+
+  - Don't tape in cold or dry weather. It dries too fast and cracks. We schedule tape jobs in spring/summer or control humidity.
+  - Use lightweight joint compound for the first two coats (it's easier to sand), then a finish compound for the final coat.
+  - Feather wide. A 12-inch feather is invisible; a 3-inch feather shows under certain light.
+  - Prime before painting stains. Primer blocks the stain from bleeding through.
+
+  ## Why Hire a Pro
+
+  Drywall finishing looks easy but's hard to get right. Tape lines, seams, and sanding dust are common DIY problems. A professional knows the humidity and temperature limits, uses the right compounds for each step, feathers properly, and sands smooth without creating waves.
+
+  <fragment slot="related">
+    <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Door & Window Repair</h3>
+      <p class="text-sm text-slate-600">Fix door frame damage before patching walls.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Full interior wall updates and refresh.</p>
+    </a>
+    <a href="/bathroom-fixtures" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Bathroom Fixtures</h3>
+      <p class="text-sm text-slate-600">Fix water damage from plumbing leaks.</p>
+    </a>
+    <a href="/parksville" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Parksville</h3>
+      <p class="text-sm text-slate-600">Local drywall repair service.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

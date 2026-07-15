@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://parksvillehandyman.ca/sitemap.xml
+
+# Crawl delay to be nice to server (in seconds)
+Crawl-delay: 1

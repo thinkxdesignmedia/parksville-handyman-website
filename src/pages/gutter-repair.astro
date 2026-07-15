@@ -1,0 +1,89 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.gutterRepair;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Gutters clog with leaves, needles, and debris, causing water to overflow and rot your fascia and foundation. We clean, repair, and install gutters. Seamless aluminum and steel available.
+  </fragment>
+
+  ## Why Gutters Matter
+
+  Gutters do one job: move water away from your house. When they fail, water runs down the fascia, pools at the foundation, and soaks into soil around basement walls. On the Island, that water freezes, heaves, and cracks your foundation. It also encourages rot in fascia boards and eaves.
+
+  **Clogged gutters** — Fall and spring dump leaves and fir needles. By October, most gutters are half-full. Water pools, gets heavy, and either overflows or seeps through joints. The pool also breeds mosquitoes.
+
+  **Sagging gutters** — Gutters should slope 1/16 inch per foot toward the downspout. If they're installed flat or slope the wrong way, water pools. Leaves gather in pools and add weight. The gutter sags more. Eventually it pulls away from the fascia.
+
+  **Leaking seams** — Sectional gutters are joined with sealant and fasteners. Those seams fail after 10–15 years. Water leaks into the joint, and the gutter separates.
+
+  **Damaged downspouts** — Downspouts get bent, dented, or come loose from the wall. Water doesn't drain away. It runs down the foundation instead.
+
+  ## What We Do
+
+  **Gutter cleaning** — We remove debris by hand (or vacuum), flush the gutters and downspouts, and confirm water flows to the downspout. A clean gutter is the cheapest maintenance task. Do it twice a year (spring and fall).
+
+  **Gutter repair** — Leaking seams get resealed or resoldered. Small holes get patched. Sagging gutters get re-pitched and re-fastened. Damaged sections get replaced.
+
+  **Gutter replacement** — Old or badly damaged gutters get removed and new gutters installed. We offer sectional aluminum (affordable, standard), seamless aluminum (no seams to leak), and copper or steel (premium, lasts decades). We size the gutters to your roof area and slope them properly toward downspouts.
+
+  **Downspout installation** — We extend downspouts 4–6 feet from the foundation with splash blocks or underground drainage, depending on your slope and drainage needs.
+
+  ## Gutter Sizes & Capacity
+
+  Standard residential gutters are 5-inch K-style or half-round. A 5-inch gutter handles about 1 inch of rain per hour (typical for heavy storms). Larger roofs or high-rain areas need 6-inch gutters. We assess your roof area and local rainfall to recommend the right size.
+
+  ## Seamless vs. Sectional
+
+  **Seamless** — Made on-site to fit your house. No seams to leak. Lasts 20+ years. Costs more upfront but saves on maintenance. Often the best value for homes that will be owned long-term.
+
+  **Sectional** — Pre-made sections joined with fasteners and sealant. Cheaper upfront. Seams can fail after 10–15 years. Requires more maintenance.
+
+  ## Cost & Timeline
+
+  - Gutter cleaning: $150–$350 (depends on house size)
+  - Gutter repair: $200–$800
+  - Seamless gutter installation (per linear foot): $8–$15
+  - Sectional gutter installation (per linear foot): $5–$10
+  - Downspout extension: $150–$400
+
+  Most jobs take 1–2 days.
+
+  ## Prevention
+
+  - Clean gutters in spring (after bloom, before summer) and fall (before leaves drop).
+  - Install gutter guards to reduce debris, though they're not maintenance-free.
+  - Trim tree branches over the roof.
+  - Check downspout flow after storms.
+
+  ## Why Hire a Pro
+
+  Gutter work is often on a ladder at height. It's risky to DIY. We have the right equipment, know how to pitch gutters correctly, and use proper fasteners that won't rust in a decade.
+
+  <fragment slot="related">
+    <a href="/deck-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Deck Repair</h3>
+      <p class="text-sm text-slate-600">Clean gutters prevent deck water damage.</p>
+    </a>
+    <a href="/fence-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Fence Repair</h3>
+      <p class="text-sm text-slate-600">Ensure downspouts drain away from fences.</p>
+    </a>
+    <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Pressure Washing</h3>
+      <p class="text-sm text-slate-600">Clean gutters and fascia regularly.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Soffit and fascia repairs.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

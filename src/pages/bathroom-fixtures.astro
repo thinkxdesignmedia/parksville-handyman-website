@@ -1,0 +1,91 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.bathroomFixtures;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Leaking faucets, running toilets, clogged drains, broken shower heads. We repair and install bathroom fixtures. Quick fixes and full fixture upgrades.
+  </fragment>
+
+  ## Common Bathroom Problems
+
+  **Leaking faucets** — A dripping tap wastes 3,000 gallons per year and runs up your water bill. Usually the fix is a washer or cartridge replacement, which takes 20 minutes.
+
+  **Running toilets** — The flapper or fill valve wears out. Water runs from the tank into the bowl constantly. Another 200+ gallons per day down the drain.
+
+  **Clogged drains** — Hair, soap, and debris build up. Water drains slowly or not at all. Often cleared with a plunger or drain snake; sometimes needs P-trap removal and cleaning.
+
+  **Low water pressure** — Corroded aerators, mineral buildup, or supply line issues. A simple aerator cleaning often fixes it.
+
+  **Broken fixtures** — Shower heads, handles, towel racks, medicine cabinets. These get bumped, age, and fail.
+
+  ## What We Fix
+
+  **Faucet repair and replacement** — Leaking faucets get rebuilt (new washers, cartridges, or valve seats) or replaced entirely. We install single-handle and dual-handle faucets, wall-mounted, and vessel sink models.
+
+  **Toilet repair and replacement** — Running toilets get a new flapper or fill valve (cheap fix). Cracked bowls or tanks get replaced. We remove the old toilet, install a new one, and ensure proper seal and caulking.
+
+  **Drain cleaning** — We use a plunger, drain snake, or wet vacuum to clear clogs. If the P-trap is clogged, we remove it, clean it, and reinstall. For tougher blockages, we may recommend a plumber with a drain camera and power auger.
+
+  **Shower and tub repair** — Leaking or corroded shower heads get replaced. Diverters (the valve that switches between tub and shower) get rebuilt or replaced. We also handle caulk removal and resealing.
+
+  **Fixture installation** — New vanities, towel racks, shelving, mirrors, and lighting. We rough-in supply and drain lines if needed, or tie into existing lines.
+
+  **Ventilation fans** — Bathroom exhaust fans prevent mold and humidity damage. We install, repair, and connect to proper ducting that vents outside (not into the attic).
+
+  ## When to Call a Plumber vs. a Handyman
+
+  Most fixture repair and replacement is handyman work. However, if the job requires:
+  - New rough-in plumbing (extending supply or drain lines into walls)
+  - Tie-in to the main water line or septic system
+  - Gas line work (tankless water heaters)
+  - Significant wall opening or framing
+
+  ...then a licensed plumber is required. We can help with fixture installation if the rough-in already exists.
+
+  ## Cost & Timeline
+
+  - Faucet repair: $150–$300
+  - Faucet replacement: $300–$700
+  - Toilet repair: $100–$250
+  - Toilet replacement: $400–$1,000
+  - Drain cleaning: $150–$400
+  - Shower head or tile caulk: $100–$300
+  - Exhaust fan installation: $300–$600
+
+  Most jobs take 2–4 hours.
+
+  ## Prevention
+
+  - Clean aerators and shower heads annually (soak in vinegar to dissolve mineral deposits).
+  - Don't pour grease down drains—use a drain strainer.
+  - Ventilate the bathroom after showers (run the exhaust fan for 20 minutes).
+  - Caulk and seal around tubs and showers annually.
+
+  <fragment slot="related">
+    <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Door & Window Repair</h3>
+      <p class="text-sm text-slate-600">Fix water damage from plumbing leaks.</p>
+    </a>
+    <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Drywall Repair</h3>
+      <p class="text-sm text-slate-600">Patch water stains from leaks.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Vanity upgrades and tile work.</p>
+    </a>
+    <a href="/parksville" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Parksville</h3>
+      <p class="text-sm text-slate-600">Local bathroom fixture service.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

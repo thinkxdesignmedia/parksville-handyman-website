@@ -1,0 +1,100 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.pressureWashing;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Dirty decks, driveways, house siding covered in algae and mold. Pressure washing restores the finish and prevents long-term damage. Fast results.
+  </fragment>
+
+  ## What Pressure Washing Does
+
+  High-pressure water removes:
+  - Algae and moss (common on shaded surfaces)
+  - Mold and mildew (causes wood rot and respiratory issues)
+  - Dirt, pollen, and weathering grime
+  - Paint and stain prep (before recoating)
+
+  On the Island, moss and algae grow fast due to rain and shade. Regular washing extends the life of wood, decks, driveways, and siding.
+
+  ## Surfaces We Clean
+
+  **Decks and patios** — 2,500–3,500 PSI (pounds per square inch). High pressure can damage wood if used wrong, so we use lower pressure with detergent for best results.
+
+  **Driveways and concrete** — 3,000–3,500 PSI. Removes oil stains, algae, and weathering.
+
+  **House siding** — 1,500–2,000 PSI. Gentle enough for vinyl and wood; we adjust for delicate surfaces like stucco.
+
+  **Fence and deck boards** — Same as decks—we use appropriate pressure and angle to avoid gouging.
+
+  **Gutters and downspouts** — Lower pressure to avoid bending metal.
+
+  **Roof** — We do NOT pressure wash roofs. High pressure dislodges shingles and causes leaks. We recommend professional moss-removal products or manual cleaning instead.
+
+  ## Pressure Washing vs. Soft Washing
+
+  **Pressure washing** uses high PSI to blast away dirt. Good for concrete and heavily soiled surfaces. Can damage wood and delicate materials.
+
+  **Soft washing** uses low pressure (under 500 PSI) with detergent to kill mold and algae. Better for wood, siding, and roofs. Takes longer but doesn't damage surfaces.
+
+  We use the right technique for each surface.
+
+  ## Cost & Timeline
+
+  - Deck cleaning (per square foot): $0.15–$0.30
+  - Driveway cleaning (per square foot): $0.10–$0.20
+  - House siding (per square foot): $0.15–$0.25
+  - Small deck (12x16): $200–$400
+  - Small driveway (single car): $150–$300
+  - Full house exterior: $800–$2,000
+
+  Most jobs take 2–6 hours depending on size and condition.
+
+  ## After Pressure Washing
+
+  Plan to stain or seal decks and fences within a few weeks. The wood is clean and ready for finish. Pressure washing is the prep step for re-staining or resealing.
+
+  ## Safety & Equipment
+
+  Pressure washers are powerful. Using wrong technique or pressure can:
+  - Gouge or splinter wood
+  - Bend gutters and downspouts
+  - Damage windows and seals
+  - Cause slipping hazards
+  - Injure skin (high-pressure water can cut)
+
+  We have commercial-grade equipment, know the safe PSI for each surface, and have insurance.
+
+  ## Prevention
+
+  - Pressure wash decks and driveways every 2–3 years (or as needed).
+  - Clean gutters before washing (dry debris comes off easier).
+  - Treat algae-prone surfaces with algae preventive if they stay shaded.
+
+  <fragment slot="related">
+    <a href="/deck-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Deck Repair</h3>
+      <p class="text-sm text-slate-600">Pressure wash before staining.</p>
+    </a>
+    <a href="/fence-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Fence Repair</h3>
+      <p class="text-sm text-slate-600">Clean and seal fence annually.</p>
+    </a>
+    <a href="/gutter-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Gutter Cleaning</h3>
+      <p class="text-sm text-slate-600">Clean gutters before washing siding.</p>
+    </a>
+    <a href="/qualicum-beach" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Qualicum Beach</h3>
+      <p class="text-sm text-slate-600">Local pressure washing service.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

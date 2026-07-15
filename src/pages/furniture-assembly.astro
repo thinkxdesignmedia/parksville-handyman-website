@@ -1,0 +1,88 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.furnitureAssembly;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    IKEA, store-bought, and flat-pack furniture. TV mounting, shelving installation, bed assembly. We handle it fast and clean up after.
+  </fragment>
+
+  ## What We Assemble
+
+  **Flat-pack furniture** — IKEA, Wayfair, Amazon, and other retailers ship flat and require assembly. Bookcases, desks, dressers, kitchen islands. Most jobs take 1–3 hours depending on complexity.
+
+  **Beds and mattress frames** — Platform beds, bed frames with storage, adjustable beds. We assemble, level, and ensure it's sturdy.
+
+  **Entertainment units and TV stands** — Wall units, media consoles, cable management. We assemble and cable-dress the whole setup.
+
+  **Shelving and storage** — Wall shelves, closet organizers, garage shelving. We locate studs, install brackets properly, and ensure shelves are level.
+
+  **Desks and work tables** — Standing desks, office desks, craft tables. We assemble and check stability.
+
+  **Outdoor furniture** — Patio sets, deck chairs, grills. We weatherproof fasteners if needed.
+
+  ## TV Mounting
+
+  We mount flat-screens to walls (drywall or concrete), hide cables, and set up TV stands. We locate studs, use the right brackets for weight, and ensure the TV is level and at a comfortable viewing angle.
+
+  - TVs up to 50": $150–$300 (wall mount and cable management)
+  - TVs 50"+: $250–$400 (heavier brackets, more hardware)
+  - Soundbar installation: $75–$150
+  - Full A/V setup (amplifier, receiver, streaming device): $300–$600
+
+  We use stud finders and levels. We don't guess and hope—we verify everything is secure before leaving.
+
+  ## What's Included
+
+  - Assembly per instructions
+  - Hardware tightened and double-checked
+  - Debris removal and recycling of packaging
+  - Leveling and stability check
+  - Quick instruction on adjustment or features
+
+  ## What's NOT Included
+
+  - Custom modifications (cutting, drilling, painting—we'll quote separately if needed)
+  - Plumbing or electrical work
+  - Load-bearing shelves (walls must be verified structurally sound)
+
+  ## Cost & Timeline
+
+  Simple furniture (chairs, small tables): $50–$150
+  Medium complexity (desks, bookcases): $150–$350
+  Complex (wall units, entertainment centers): $300–$700
+  TV mounting: $150–$400
+
+  Most jobs take 1–3 hours on-site.
+
+  ## Why Hire a Pro
+
+  Assembly is tedious and error-prone. Instructions assume you have tools and space. Beds assembled incorrectly are a safety risk. TVs mounted wrong can fall. We've assembled hundreds of pieces—we know shortcuts, spot missing parts early, and catch assembly mistakes before you find them when the shelf collapses.
+
+  <fragment slot="related">
+    <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Door & Window Repair</h3>
+      <p class="text-sm text-slate-600">Install custom shelving and cabinets.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Built-in shelving and cabinetry.</p>
+    </a>
+    <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Drywall Repair</h3>
+      <p class="text-sm text-slate-600">Patch walls after shelving installation.</p>
+    </a>
+    <a href="/parksville" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Parksville</h3>
+      <p class="text-sm text-slate-600">Local furniture assembly.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

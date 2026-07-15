@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../config';
+
+const canonicalUrl = new URL('/contact', Astro.url).href;
+---
+
+<BaseLayout
+  title="Contact | Parksville Handyman Services"
+  description="Get in touch. Call, email, or fill out our contact form for a free estimate."
+  canonicalUrl={canonicalUrl}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>Contact</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12 border-b border-slate-200">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+      <p class="text-lg text-slate-600">
+        Have a question or ready to get started? We're here to help.
+      </p>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Phone</h3>
+              <a href="tel:{config.phone}" class="text-orange-600 hover:underline text-lg font-semibold">
+                {config.phone}
+              </a>
+              <p class="text-slate-600 text-sm mt-1">Call for immediate quotes or emergencies</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Email</h3>
+              <a href="mailto:{config.email}" class="text-orange-600 hover:underline">
+                {config.email}
+              </a>
+              <p class="text-slate-600 text-sm mt-1">We'll get back to you within 24 hours</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Service Areas</h3>
+              <ul class="text-slate-600 space-y-1">
+                <li>✓ Parksville</li>
+                <li>✓ Qualicum Beach</li>
+                <li>✓ Oceanside</li>
+              </ul>
+              <p class="text-slate-600 text-sm mt-2">Call for service outside these areas</p>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Hours</h3>
+              <p class="text-slate-600">
+                Monday–Friday: 7am–5pm<br />
+                Saturday: 9am–4pm<br />
+                Sunday: By appointment
+              </p>
+              <p class="text-slate-600 text-sm mt-2">Emergency service available (call first)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Quote Form -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Quick Quote</h2>
+          <form action="/api/quote" method="POST" class="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your Phone"
+              required
+              class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email (optional)"
+              class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            />
+            <select
+              name="service"
+              required
+              class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            >
+              <option value="">What do you need?</option>
+              <option value="deck-repair">Deck Repair</option>
+              <option value="drywall-repair">Drywall Repair</option>
+              <option value="fence-repair">Fence Repair</option>
+              <option value="gutter-repair">Gutter Cleaning/Repair</option>
+              <option value="bathroom-fixtures">Bathroom Fixtures</option>
+              <option value="door-window-repair">Door/Window Repair</option>
+              <option value="furniture-assembly">Furniture Assembly</option>
+              <option value="pressure-washing">Pressure Washing</option>
+              <option value="small-renovations">Small Renovations</option>
+              <option value="other">Other</option>
+            </select>
+            <textarea
+              name="description"
+              placeholder="Describe the job (be specific)"
+              rows="4"
+              class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded transition"
+            >
+              Get a Free Estimate
+            </button>
+            <p class="text-xs text-slate-500 text-center">
+              We'll respond within 24 hours. No obligation, no spam.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-t border-slate-200 py-12">
+      <h2 class="text-2xl font-bold mb-6">Before You Contact Us</h2>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">What's the fastest way to reach you?</h3>
+          <p class="text-slate-600">Call us. Phone is fastest for urgent jobs. Email is fine for non-urgent work (we respond within 24 hours).</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">Do you provide free estimates?</h3>
+          <p class="text-slate-600">Yes. We'll assess the job and give you a price with no obligation.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">What information helps us quote your job?</h3>
+          <p class="text-slate-600">Be specific: what's broken, where it is, what you want fixed. Photos help but aren't required. The more detail, the more accurate our quote.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-2">How quickly can you start?</h3>
+          <p class="text-slate-600">Same-day or next-day service is often available. Standard repairs take 3–7 days depending on season and complexity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Signal -->
+    <section class="bg-orange-50 rounded-lg p-8 my-12 text-center">
+      <p class="text-slate-600">
+        ✓ Insured & Experienced<br />
+        ✓ Fair Pricing, No Hidden Fees<br />
+        ✓ Local Service, Island Expertise<br />
+        ✓ 30-Day Warranty on All Work
+      </p>
+    </section>
+  </div>
+</BaseLayout>

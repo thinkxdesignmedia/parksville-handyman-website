@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config, pages } from '../config';
+
+const page = pages.blog.faq;
+const canonicalUrl = new URL(`/${page.slug}`, Astro.url).href;
+
+const faqs = [
+  {
+    question: "Do you charge for estimates?",
+    answer: "No. We provide free estimates for most jobs. We assess the work, give you a price, and you decide with no obligation."
+  },
+  {
+    question: "How quickly can you start?",
+    answer: "Same-day or next-day service is often available for urgent jobs. Standard repairs take 3–7 days depending on season and our schedule. Call us to check availability."
+  },
+  {
+    question: "Are you insured and licensed?",
+    answer: "Yes. We carry full liability insurance. Some jobs (electrical, plumbing, gas work) require licensed trades. We'll tell you if your job needs a licensed contractor."
+  },
+  {
+    question: "Do you warranty your work?",
+    answer: "We guarantee our work is done right. If something fails due to our workmanship within 30 days, we'll fix it at no charge. Materials have manufacturer warranties (we pass those to you)."
+  },
+  {
+    question: "What's your service area?",
+    answer: "We serve Parksville, Qualicum Beach, and Oceanside. We can go beyond with advance notice. Call to discuss your location."
+  },
+  {
+    question: "Can you work weekends or evenings?",
+    answer: "Yes, with a small premium. Schedule availability determines what's possible. Call to arrange."
+  },
+  {
+    question: "Do you do emergency repairs?",
+    answer: "Yes. Water damage, broken locks, storm damage, and other urgent jobs get priority. Call immediately and describe the issue."
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "Cash, e-transfer, credit/debit card. For jobs over $2,000, we may ask for a 30% deposit. Balance is due on completion."
+  },
+  {
+    question: "When should I hire a handyman vs. a licensed contractor?",
+    answer: "Handymen handle repairs, small upgrades, and maintenance. Licensed contractors are needed for structural work, electrical circuits, plumbing rough-in, gas lines, and work requiring permits. We'll advise you if your job needs a contractor."
+  },
+  {
+    question: "Can you help with landlord/tenant issues?",
+    answer: "Yes. We understand BC Residential Tenancy Act. We work with landlords and property managers for maintenance and turnover repairs. We're efficient and professional."
+  },
+  {
+    question: "Do you do whole-home renovations?",
+    answer: "No. We handle repairs, small projects, and maintenance. Whole-home renovations need a general contractor. We can handle the smaller jobs as part of a larger project."
+  },
+  {
+    question: "How do I know if I need a new deck or repair?",
+    answer: "If the frame and posts are solid but boards are rotten, repair is fine. If the structure is sagging or bouncing, or rot is extensive, rebuild is safer. We'll assess and recommend the best option."
+  },
+  {
+    question: "Can you remove old fixtures and dispose of them?",
+    answer: "Yes. Removal and disposal are included in fixture replacement. We haul away the old toilet, faucet, or shelving."
+  },
+  {
+    question: "What if the job takes longer than estimated?",
+    answer: "We'll call you before overrunning the estimate. If hidden damage or complications emerge, we discuss options and costs before proceeding."
+  },
+  {
+    question: "Do you provide maintenance plans?",
+    answer: "We don't offer ongoing contracts, but we recommend annual spring inspections. We can help you create a maintenance calendar and prioritize work."
+  }
+];
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })}></script>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>FAQ</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12 border-b border-slate-200">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg text-slate-600">
+        Common questions about hiring a handyman, our services, pricing, and how we work.
+      </p>
+    </section>
+
+    <!-- FAQ List -->
+    <section class="py-12 space-y-6">
+      {faqs.map((faq, i) => (
+        <div class="border border-slate-200 rounded-lg p-6" key={i}>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">{faq.question}</h3>
+          <p class="text-slate-600 leading-relaxed">{faq.answer}</p>
+        </div>
+      ))}
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-orange-50 rounded-lg p-8 my-12">
+      <h2 class="text-2xl font-bold mb-4 text-center">Still have questions?</h2>
+      <p class="text-center text-slate-600 mb-6">
+        Call us or fill out our quote form. We're happy to answer.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded">
+          📞 Call {config.phone}
+        </a>
+        <a href="/#quote-form" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-100 font-bold py-3 px-6 rounded">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config, pages } from '../config';
+
+const canonicalUrl = new URL('/', Astro.url).href;
+---
+
+<BaseLayout
+  title={pages.home.title}
+  description={pages.home.description}
+  keywords={pages.home.keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": config.businessName,
+    "telephone": config.phone,
+    "email": config.email,
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Parksville",
+        "state": "BC",
+        "country": "CA"
+      },
+      {
+        "@type": "City",
+        "name": "Qualicum Beach",
+        "state": "BC",
+        "country": "CA"
+      },
+      {
+        "@type": "City",
+        "name": "Oceanside",
+        "state": "BC",
+        "country": "CA"
+      }
+    ],
+    "priceRange": "$$$",
+    "url": "https://parksvillehandyman.ca",
+    "sameAs": [
+      "https://www.google.com/maps/search/handyman+parksville"
+    ]
+  })}></script>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        Handyman Services in Parksville & Qualicum Beach
+      </h1>
+      <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl">
+        Fast, reliable repairs for decks, gutters, drywall, fences, and more. Local service. No job too small. Get a free estimate today.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded text-lg">
+          📞 Call Now: {config.phone}
+        </a>
+        <a href="#quote-form" class="bg-white text-slate-900 hover:bg-slate-100 font-bold py-3 px-6 rounded text-lg">
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">What We Fix</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/deck-repair" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Deck Repair & Maintenance</h3>
+          <p class="text-slate-600 text-sm">Sagging boards, rotten wood, staining and sealing. Island decks take a beating.</p>
+        </a>
+        <a href="/drywall-repair" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Drywall Repair</h3>
+          <p class="text-slate-600 text-sm">Holes, cracks, water damage. Smooth finish, paint-ready.</p>
+        </a>
+        <a href="/fence-repair" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Fence & Gate Repair</h3>
+          <p class="text-slate-600 text-sm">Sagging gates, rotten posts, storm damage. Restore your perimeter.</p>
+        </a>
+        <a href="/gutter-repair" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Gutter Cleaning & Repair</h3>
+          <p class="text-slate-600 text-sm">Clear leaves, fir needles, debris. Installation and repair too.</p>
+        </a>
+        <a href="/bathroom-fixtures" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Bathroom Fixtures</h3>
+          <p class="text-slate-600 text-sm">Faucet repair, toilet installation, fixture upgrades.</p>
+        </a>
+        <a href="/small-renovations" class="border border-slate-200 rounded-lg p-6 hover:border-orange-600 hover:shadow-lg transition">
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Small Renovations & Odd Jobs</h3>
+          <p class="text-slate-600 text-sm">Whatever you need done right. No project too small.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="bg-slate-50 py-12 md:py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="text-4xl font-bold text-orange-600 mb-2">100+</p>
+          <p class="text-slate-600">Happy customers across the Island</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-orange-600 mb-2">Fast</p>
+          <p class="text-slate-600">Free estimates. Often same-week service.</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-orange-600 mb-2">Local</p>
+          <p class="text-slate-600">Serving Parksville since {config.yearEstablished}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-12">Quick Questions?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900">How much does a handyman cost?</h3>
+          <p class="text-slate-600 mb-4">Most jobs run $75–$150/hour on Vancouver Island, depending on complexity. Small jobs have minimums. We provide free estimates with no obligation.</p>
+          <a href="/handyman-pricing-bc" class="text-orange-600 font-semibold hover:underline">Read our pricing guide →</a>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900">Do you do emergency repairs?</h3>
+          <p class="text-slate-600 mb-4">Yes. Call us about same-day or next-day service for urgent jobs like water damage, broken doors, or storm damage.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900">Are you licensed and insured?</h3>
+          <p class="text-slate-600 mb-4">Yes. We carry full liability insurance. Certain jobs require licensed contractors — we'll let you know upfront.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900">What's your service area?</h3>
+          <p class="text-slate-600 mb-4">We serve Parksville, Qualicum Beach, and Oceanside. Travel beyond is possible — call to discuss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="bg-orange-50 py-16 md:py-20">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-4 text-center">Get a Free Estimate</h2>
+      <p class="text-center text-slate-600 mb-8">Tell us what you need fixed. We'll get back to you within 24 hours.</p>
+      <form action="/api/quote" method="POST" class="space-y-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <select
+          name="service"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        >
+          <option value="">What do you need?</option>
+          <option value="deck-repair">Deck Repair</option>
+          <option value="drywall-repair">Drywall Repair</option>
+          <option value="fence-repair">Fence Repair</option>
+          <option value="gutter-repair">Gutter Cleaning/Repair</option>
+          <option value="bathroom-fixtures">Bathroom Fixtures</option>
+          <option value="door-window-repair">Door/Window Repair</option>
+          <option value="furniture-assembly">Furniture Assembly</option>
+          <option value="pressure-washing">Pressure Washing</option>
+          <option value="other">Other/Odd Job</option>
+        </select>
+        <textarea
+          name="description"
+          placeholder="Describe the job (be specific—what's broken, what area, photos help)"
+          rows="4"
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded text-lg transition"
+        >
+          Get a Free Estimate
+        </button>
+        <p class="text-xs text-slate-500 text-center">
+          We'll reach out within 24 hours. No spam, ever.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-slate-900 text-white py-12 text-center">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-lg mb-4">Ready to get started?</p>
+      <a href="tel:{config.phone}" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded text-lg">
+        📞 Call {config.phone}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

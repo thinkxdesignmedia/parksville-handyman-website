@@ -1,0 +1,109 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { config } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+  keyword: string;
+  serviceSlug: string;
+}
+
+const { title, description, keyword, serviceSlug } = Astro.props;
+const canonicalUrl = new URL(`/${serviceSlug}`, Astro.url).href;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>{title.split('|')[0].trim()}</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-8 md:py-12 border-b border-slate-200">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{title.split('|')[0]}</h1>
+      <p class="text-lg text-slate-600 mb-6">
+        <slot name="intro" />
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded">
+          📞 Call {config.phone}
+        </a>
+        <a href="#service-quote" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold py-3 px-6 rounded">
+          Get a Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <article class="py-12 prose prose-lg max-w-none">
+      <slot />
+    </article>
+
+    <!-- Image (placeholder) -->
+    <div class="my-12 rounded-lg overflow-hidden bg-slate-100 h-96 flex items-center justify-center">
+      <div class="text-center">
+        <p class="text-slate-500 text-lg mb-2">📷 TODO: Real photo of {title.split('|')[0]}</p>
+        <p class="text-slate-400 text-sm">Replace with local before/after or process photos</p>
+      </div>
+    </div>
+
+    <!-- Related Services -->
+    <section class="py-12 border-t border-slate-200">
+      <h2 class="text-2xl font-bold mb-6">Related Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <slot name="related" />
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="service-quote" class="bg-orange-50 rounded-lg p-8 my-12">
+      <h2 class="text-2xl font-bold mb-4">Get a Free Estimate for {title.split('|')[0]}</h2>
+      <form action="/api/quote" method="POST" class="space-y-4">
+        <input type="hidden" name="service" value={serviceSlug} />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <textarea
+          name="description"
+          placeholder="Describe the job in detail"
+          rows="4"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded transition"
+        >
+          Get a Free Estimate
+        </button>
+      </form>
+    </section>
+
+    <!-- Trust Signal -->
+    <div class="bg-slate-50 rounded-lg p-8 mb-12">
+      <p class="text-center text-slate-600">
+        ✓ Insured & Experienced · ✓ Same-Week Service Available · ✓ Free Estimates, No Obligation
+      </p>
+    </div>
+  </div>
+</BaseLayout>

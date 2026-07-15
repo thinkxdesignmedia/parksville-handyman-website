@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config, pages } from '../config';
+
+const page = pages.blog.pricingGuide;
+const canonicalUrl = new URL(`/${page.slug}`, Astro.url).href;
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": page.title,
+    "description": page.description,
+    "datePublished": "2024-01-15",
+    "author": {
+      "@type": "Organization",
+      "name": config.businessName
+    }
+  })}></script>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>{page.title}</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12 border-b border-slate-200">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-lg text-slate-600 mb-6">
+        What handyman work actually costs on Vancouver Island. Real rates, real estimates, no surprises.
+      </p>
+    </section>
+
+    <!-- Content -->
+    <article class="prose prose-lg max-w-none py-12">
+      <h2>Handyman Rates in BC</h2>
+
+      <p>Most handymen on Vancouver Island charge between $75 and $150 per hour. Rates vary based on:</p>
+
+      <ul>
+        <li><strong>Experience and specialization</strong> — A handyman with 20 years of deck work charges more than someone doing general repairs.</li>
+        <li><strong>Job complexity</strong> — Simple tasks (hanging shelves) are quick and cheaper. Complex jobs (deck rebuilds) take longer.</li>
+        <li><strong>Location</strong> — Parksville and Qualicum are slightly cheaper than Victoria. Oceanside and remote areas may have travel charges.</li>
+        <li><strong>Urgency</strong> — Same-day or weekend service costs more. We charge a small premium for emergency availability.</li>
+        <li><strong>Licensing and insurance</strong> — Licensed handymen with full insurance charge more than unlicensed handymen. It's worth it.</li>
+      </ul>
+
+      <h2>Typical Service Costs</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Cost Range</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Small hole patch (drywall)</td>
+            <td>$150–$400</td>
+            <td>Includes material, mud, sand, prime</td>
+          </tr>
+          <tr>
+            <td>Shelving installation</td>
+            <td>$150–$300</td>
+            <td>Per shelf; includes finding studs, level, hardware</td>
+          </tr>
+          <tr>
+            <td>TV mounting</td>
+            <td>$200–$400</td>
+            <td>Includes bracket, studs, cables hidden</td>
+          </tr>
+          <tr>
+            <td>Gutter cleaning</td>
+            <td>$150–$350</td>
+            <td>Single-story to 2-story house</td>
+          </tr>
+          <tr>
+            <td>Deck staining (per sq ft)</td>
+            <td>$5–$8/sq ft</td>
+            <td>12x16 deck: $960–$1,536</td>
+          </tr>
+          <tr>
+            <td>Toilet replacement</td>
+            <td>$400–$1,000</td>
+            <td>Labor + material; includes old removal</td>
+          </tr>
+          <tr>
+            <td>Faucet repair</td>
+            <td>$150–$300</td>
+            <td>Washer or cartridge replacement</td>
+          </tr>
+          <tr>
+            <td>Faucet replacement</td>
+            <td>$300–$700</td>
+            <td>New fixture installation</td>
+          </tr>
+          <tr>
+            <td>Pressure washing (per sq ft)</td>
+            <td>$0.10–$0.30</td>
+            <td>Depends on surface and condition</td>
+          </tr>
+          <tr>
+            <td>Fence board replacement</td>
+            <td>$50–$150 per board</td>
+            <td>Material + labor</td>
+          </tr>
+          <tr>
+            <td>Door or window weatherstripping</td>
+            <td>$150–$400</td>
+            <td>Depends on number of openings</td>
+          </tr>
+          <tr>
+            <td>Furniture assembly (IKEA)</td>
+            <td>$75–$200 per item</td>
+            <td>Complexity varies by piece</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Hourly Work: What to Expect</h2>
+
+      <p>For jobs quoted by the hour, expect to pay $75–$150/hour depending on experience and location. Most jobs take 2–6 hours. Here's a breakdown:</p>
+
+      <ul>
+        <li><strong>$75/hour</strong> — General repairs, simple mounting, assembly, basic cleaning. Entry-level handyman with minimal experience.</li>
+        <li><strong>$100/hour</strong> — Specialty work (deck stain, gutter repair), experienced handyman, good insurance.</li>
+        <li><strong>$125–$150/hour</strong> — Complex repairs, licensed tradesperson doing handyman work, high-end finishes, expedited service.</li>
+      </ul>
+
+      <h2>Minimum Call-Out Charges</h2>
+
+      <p>Most handymen charge a minimum (typically $100–$150) for jobs under 1 hour. This covers travel, assessment, and setup. If you need a 15-minute lock repair, you're paying the minimum, not $25 (hourly rate for 15 min). It's fair—handymen aren't making the money on small jobs; they're honoring your schedule.</p>
+
+      <h2>How We Quote</h2>
+
+      <p>We provide free estimates for most jobs. Here's how it works:</p>
+
+      <ol>
+        <li>Fill out our quote form or call us with job details.</li>
+        <li>We assess the job (often on-site).</li>
+        <li>We provide a fixed price or hourly range.</li>
+        <li>You decide. No obligation if you don't proceed.</li>
+      </ol>
+
+      <p>For large or complex jobs, we may charge a small diagnostic fee (applied to the final bill if you proceed). This ensures accuracy and saves time later.</p>
+
+      <h2>Ways to Save on Handyman Work</h2>
+
+      <ul>
+        <li><strong>Batch small jobs</strong> — One visit for multiple repairs is cheaper than three separate calls. We charge once for travel.</li>
+        <li><strong>Do preventive maintenance</strong> — $1,000 today on gutter cleaning and sealing beats a $15,000 deck rebuild later.</li>
+        <li><strong>Schedule off-peak</strong> — Weekdays are cheaper than weekends. Avoiding July and August can save 10–15%.</li>
+        <li><strong>Provide materials</strong> — Sometimes you can buy supplies cheaper than we can. Ask if it's an option.</li>
+        <li><strong>Landlord/strata discounts</strong> — If you manage multiple properties, we offer bulk rates.</li>
+      </ul>
+
+      <h2>What's NOT Included in Handyman Pricing</h2>
+
+      <p>Handyman work has limits. Licensed trades are required for:</p>
+
+      <ul>
+        <li>New electrical circuits (licensed electrician)</li>
+        <li>Gas lines (licensed plumber or gas tech)</li>
+        <li>Structural or foundation work (contractor or engineer)</li>
+        <li>Plumbing rough-in (licensed plumber)</li>
+        <li>Roof work (roofer or contractor)</li>
+        <li>Asbestos or mold removal (specialists)</li>
+      </ul>
+
+      <p>If a job requires a license, we'll tell you upfront and recommend someone trusted.</p>
+
+      <h2>Material Costs</h2>
+
+      <p>Labor is half the price; materials are the other half. Here are typical material costs (before labor):</p>
+
+      <ul>
+        <li>Deck stain (5-gallon): $100–$200</li>
+        <li>Weatherstripping: $15–$50 per window/door</li>
+        <li>Gutter (aluminum, per linear foot): $3–$8</li>
+        <li>Pressure-treated lumber (per board): $20–$50</li>
+        <li>Drywall compound (25 lbs): $15–$25</li>
+        <li>Faucet cartridge: $50–$100</li>
+      </ul>
+
+      <p>We pass along material costs at retail + small markup (5–10%). We don't upcharge materials; it's not where we make money.</p>
+
+      <h2>Payment and Deposits</h2>
+
+      <p>We accept cash, e-transfer, and card. For jobs over $2,000, we may ask for a 30% deposit. The balance is due on completion. We invoice for transparency.</p>
+
+      <h2>Bottom Line</h2>
+
+      <p>Handyman work is an investment. A professional job costs more than DIY but saves money versus hiring a licensed contractor for small tasks. We aim for fair pricing, transparent estimates, and quality that lasts. Call us for a quote—there's no obligation.</p>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-orange-50 rounded-lg p-8 my-12 text-center">
+      <h2 class="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-slate-600 mb-6">Get a free estimate for your project. No hidden fees.</p>
+      <a href="/#quote-form" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded text-lg">
+        Get a Free Quote
+      </a>
+    </section>
+  </div>
+</BaseLayout>

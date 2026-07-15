@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config, pages } from '../config';
+
+const page = pages.areas.qualicumBeach;
+const canonicalUrl = new URL(`/${page.slug}`, Astro.url).href;
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://parksvillehandyman.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Qualicum Beach"
+      }
+    ]
+  })}></script>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>Qualicum Beach</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Handyman Services in Qualicum Beach</h1>
+      <p class="text-lg text-slate-600 mb-8">
+        Local handyman service for Qualicum Beach homes and cottages. We fix decks, gutters, fences, and more. Same-day quotes, fast service.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded">
+          📞 Call {config.phone}
+        </a>
+        <a href="#quote-form" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold py-3 px-6 rounded">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- Local Context -->
+    <article class="prose prose-lg max-w-none py-12 border-t border-slate-200">
+      <h2>Why Qualicum Beach Homes Face Unique Maintenance Challenges</h2>
+
+      <p>Qualicum Beach sits right on the water, and that coastal environment is harsh. You get direct salt-air spray, high winds, and intense UV exposure. Combined with 1,400+ mm of annual rain, homes here age faster than inland properties. Paint fades, wood grays, decks splinter, and gutters clog with salt-driven grime.</p>
+
+      <p>Many homes in Qualicum are older cottages (built 1960s–1980s) with wood siding and cedar shingles. These materials look beautiful but need constant maintenance to resist coastal weather. Pressure washing becomes essential—algae and salt residue build up faster here than anywhere else on the Island.</p>
+
+      <h3>Salt-Air Damage You'll See</h3>
+
+      <p><strong>Metal corrosion</strong> — Fasteners rust faster. Gutters, downspouts, and roof flashing deteriorate. Hinges, locks, and hardware corrode. We use stainless steel or galvanized fasteners, which resist salt spray better than regular steel.</p>
+
+      <p><strong>Wood graying</strong> — Decks and fences gray quickly from salt and UV. The wood doesn't rot immediately, but UV damage shortens the lifespan of stain and finish. Pressure washing and resealing every 2 years keeps wood looking fresh and extends its life.</p>
+
+      <p><strong>Deck and fence failure</strong> — Salt spray accelerates rot. Cracks and checking develop faster. End grain (exposed wood at the top of fence posts and deck boards) is vulnerable. Sealing end grain is critical.</p>
+
+      <p><strong>Algae and mold growth</strong> — Salty spray and moisture create perfect conditions for algae and moss. Roofs, siding, and gutters become covered within years if not cleaned. We recommend soft-washing (low-pressure cleaning) annually.</p>
+
+      <h3>Qualicum Beach Seasonal Maintenance</h3>
+
+      <p><strong>Winter storms</strong> — High winds blow siding, shingles, and branches. Storm surge and spray can cause water damage. Gutters get filled with salt-driven debris. After storms, inspection is critical.</p>
+
+      <p><strong>Spring (April–May)</strong> — Inspect exterior after winter storms. Pressure wash house siding, deck, and fence (salt residue sits all winter). Clean gutters. Check roof for wind damage.</p>
+
+      <p><strong>Summer (June–August)</strong> — Stain and seal decks and fences. This is the short dry season. Applied finish must cure properly. UV damage accelerates in summer, so high-quality stain is worth the cost.</p>
+
+      <p><strong>Fall (September–October)</strong> — Prepare for winter storms. Trim branches, secure loose trim, inspect roof flashing, clean gutters. Tighten railings and check deck fasteners.</p>
+
+      <h2>Housing Stock in Qualicum Beach</h2>
+
+      <p><strong>Oceanfront and beachfront homes</strong> — Expensive properties, intense maintenance. Decks and railings must be solid (safety liability). Salt spray requires premium materials. We're experienced with high-end coastal home maintenance.</p>
+
+      <p><strong>Older cottages (wood construction)</strong> — Charming but high-maintenance. Wood siding, wood shingles, and wood decks need consistent care. Foundation cracks are common due to salt heave. We specialize in cottage repairs.</p>
+
+      <p><strong>Newer homes and townhomes</strong> — Vinyl siding, fiberglass windows, and modern materials. Lower maintenance but still need annual sealing and inspections.</p>
+
+      <p><strong>Strata properties</strong> — Many beachfront properties are strata. We work with property managers and strata councils. We understand approval processes and can provide bulk quotes for shared maintenance (gutter cleaning, siding seal, pressure washing).</p>
+
+      <h2>Service Availability in Qualicum Beach</h2>
+
+      <p>We serve all of Qualicum Beach from Qualicum River south to the Fairwinds Resort area, including:</p>
+      <ul>
+        <li>Downtown Qualicum Beach</li>
+        <li>Beachfront and oceanfront properties</li>
+        <li>Old Qualicum (historic area)</li>
+        <li>Strata and gated communities</li>
+      </ul>
+
+      <p>Same-week service is standard. For emergencies (storm damage, water intrusion, security issues), call for same-day response.</p>
+    </article>
+
+    <!-- Service Grid -->
+    <section class="py-12 border-t border-slate-200">
+      <h2 class="text-2xl font-bold mb-6">Services Available in Qualicum Beach</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Pressure Washing</h3>
+          <p class="text-sm text-slate-600">Remove salt spray and algae</p>
+        </a>
+        <a href="/gutter-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Gutter Cleaning</h3>
+          <p class="text-sm text-slate-600">Salt and storm debris removal</p>
+        </a>
+        <a href="/deck-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Deck Repair</h3>
+          <p class="text-sm text-slate-600">Salt damage, staining, sealing</p>
+        </a>
+        <a href="/fence-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Fence Repair</h3>
+          <p class="text-sm text-slate-600">Salt-weathered wood restoration</p>
+        </a>
+        <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Door & Window Repair</h3>
+          <p class="text-sm text-slate-600">Seal against salt spray</p>
+        </a>
+        <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Small Renovations</h3>
+          <p class="text-sm text-slate-600">Coastal home updates</p>
+        </a>
+        <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Drywall Repair</h3>
+          <p class="text-sm text-slate-600">Water damage from storms</p>
+        </a>
+        <a href="/furniture-assembly" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Furniture Assembly</h3>
+          <p class="text-sm text-slate-600">Home furnishings & updates</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="bg-orange-50 rounded-lg p-8 my-12">
+      <h2 class="text-2xl font-bold mb-4">Get a Free Estimate</h2>
+      <form action="/api/quote" method="POST" class="space-y-4">
+        <input type="hidden" name="area" value="qualicum-beach" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <textarea
+          name="description"
+          placeholder="What needs fixing?"
+          rows="4"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded transition"
+        >
+          Get a Free Estimate
+        </button>
+      </form>
+    </section>
+  </div>
+</BaseLayout>

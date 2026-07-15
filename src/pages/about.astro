@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../config';
+
+const canonicalUrl = new URL('/about', Astro.url).href;
+---
+
+<BaseLayout
+  title="About | Parksville Handyman Services"
+  description="Trusted handyman service in Parksville and Qualicum Beach. Local expertise, fair pricing, quality work."
+  canonicalUrl={canonicalUrl}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>About</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12 border-b border-slate-200">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">About {config.businessName}</h1>
+      <p class="text-lg text-slate-600">
+        Local handyman service for Parksville, Qualicum Beach, and Oceanside homeowners. We've been fixing homes on Vancouver Island since {config.yearEstablished}.
+      </p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-12 prose prose-lg max-w-none border-b border-slate-200">
+      <h2>Our Story</h2>
+
+      <p>{config.businessName} started with a simple idea: Island homeowners need someone who understands coastal weather, respects their homes, and charges fair prices. We're that someone.</p>
+
+      <p>Every handyman on our team has years of Island experience. We've repaired hundreds of decks, replaced gutters in storms, fixed drywall in homes built on shifting clay, and helped seniors maintain their properties safely. We know what works on the Island and what doesn't.</p>
+
+      <p>We're not fancy, and we don't overcharge. We fix what's broken, clean up after ourselves, and explain the work in plain language. Your home isn't a project to us—it's where you live.</p>
+
+      <h2>Why We're Different</h2>
+
+      <h3>Local Knowledge</h3>
+      <p>We know Parksville's clay soil, Qualicum's salt spray, and Oceanside's storm exposure. We understand what materials last in this climate and what fails fast. We've seen it all.</p>
+
+      <h3>Fair Pricing</h3>
+      <p>We're not the cheapest, and we're not expensive. We charge realistic rates for quality work. No hidden fees, no surprises. Free estimates.</p>
+
+      <h3>Safety First</h3>
+      <p>We're insured and experienced. We don't cut corners on safety, and we tell you upfront if a job needs a licensed professional. Your home and your safety matter to us.</p>
+
+      <h3>Honest Work</h3>
+      <p>If a small repair will fix your problem, we say so. We won't oversell a rebuild when maintenance is enough. We want you to trust us, and trust is earned by being honest.</p>
+
+      <h2>What We Stand For</h2>
+
+      <ul>
+        <li><strong>Quality work, on time:</strong> We show up when we say we will and finish what we start right.</li>
+        <li><strong>Plain language:</strong> We explain what's wrong and what we're fixing in words you understand, not jargon.</li>
+        <li><strong>Respectful:</strong> We treat your home like our own. We protect your floors, clean up thoroughly, and respect your privacy.</li>
+        <li><strong>Fair pricing:</strong> Realistic rates for professional work. No nickel-and-diming, no surprises.</li>
+        <li><strong>Local:</strong> We're here. We care about this community. We'll be here next year if something needs warranty work.</li>
+      </ul>
+    </section>
+
+    <!-- Service Commitment -->
+    <section class="bg-slate-50 rounded-lg p-8 my-12">
+      <h2 class="text-2xl font-bold mb-4">Our Commitment to You</h2>
+      <ul class="space-y-3 text-slate-600">
+        <li>✓ Free estimates with no obligation</li>
+        <li>✓ Same-day or next-day service for urgent jobs</li>
+        <li>✓ Insured and experienced professionals</li>
+        <li>✓ 30-day warranty on workmanship</li>
+        <li>✓ Clean up after ourselves (always)</li>
+        <li>✓ Invoice with transparency</li>
+        <li>✓ Tell you if you need a licensed contractor (and who to call)</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 text-center border-t border-slate-200">
+      <h2 class="text-2xl font-bold mb-4">Ready to get your home fixed?</h2>
+      <p class="text-slate-600 mb-6">Call us or fill out a quote form. We'd love to help.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded">
+          📞 Call {config.phone}
+        </a>
+        <a href="/#quote-form" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold py-3 px-6 rounded">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

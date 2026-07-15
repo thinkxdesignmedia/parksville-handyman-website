@@ -1,0 +1,85 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.deckRepair;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Decks on Vancouver Island take a beating from rain, salt air, and UV. We fix sagging boards, rotten wood, cracked beams, and loose railings. Staining, sealing, and preventive maintenance too.
+  </fragment>
+
+  ## Why Island Decks Fail Early
+
+  Parksville and Qualicum Beach get 1,400+ mm of rain annually. Most of that hits between October and March, and it pools on decks if the slope is wrong or gutters are clogged. That water sits in the wood grain, freezes, and rots the fibers. Add salt spray in Oceanside and coastal wind pushing hard, and you've got accelerated decay.
+
+  We see three failure patterns:
+
+  **Soft, spongy boards** — water penetrated the stain/sealer. Typically affects the rim band (the board that faces downhill) and the outermost deck boards. A screwdriver pushes in easily. The wood needs to be removed and replaced. No amount of additional sealer fixes it; the rot is inside the grain.
+
+  **Sagging or bouncy deck** — the ledger board (where the deck attaches to your house) is pulling away, or the support posts have settled. This is a safety issue. It usually means the footings went below the frost line or the concrete footing cracked and heaved. Posts need to be reset on proper footings (below 12 inches on Vancouver Island). The ledger needs to be properly flashed so water doesn't run behind it into your rim joist.
+
+  **Loose or splitting railings** — balusters crack or pull loose, and the entire rail structure becomes unstable. This is dangerous and building codes don't allow it. Railings need to be solid and pass a 200-pound horizontal load test (that's code).
+
+  ## What We Do
+
+  **Inspection & assessment** — We look at the deck's age, condition of the stain, evidence of water intrusion, fastener corrosion, and structural integrity. We'll tell you whether it needs board replacement, complete removal and rebuild, or just sealing and minor repairs.
+
+  **Board replacement** — Rotten boards get removed and replaced with pressure-treated lumber (PT lumber resists rot better than cedar, though it costs less than cedar and looks less pretty). We match the existing board profile when possible. Fasteners go in with stainless steel screws (not nails—nails pop) or structural screws that won't corrode in 5 years.
+
+  **Ledger and flashing repair** — If the ledger is compromised, we remove it, check the rim joist, install flashing (usually aluminum with a drip edge), and rebuild the ledger properly. This is the most common place water gets into a house. Done wrong, it rots your rim joist and invites carpenter ants.
+
+  **Post footing** — Posts need 4x6 or larger concrete footings, and those footings need to be below the frost line. On the Island, that's roughly 12 inches. We'll dig out, pour, and reset posts if needed. We also check for rot at the post base (most common failure point).
+
+  **Staining and sealing** — If the deck just needs preventive maintenance, we can sand and restain with a quality exterior stain (semi-transparent is common; solid color hides the wood but lasts 3–5 years). We use 2-part urethane or penetrating oil finishes depending on the wood and your preference. Re-seal every 2–3 years to extend the deck's life by decades.
+
+  **Railing repair or rebuild** — Loose balusters get re-fastened or replaced. Rail assemblies get stiffened if there's movement. Code requires 4-inch sphere spacing (a ball can't fall through) and 200 pounds of horizontal load resistance.
+
+  ## Cost & Timeline
+
+  - Small repairs (seal/stain, 1–2 board replacements): $500–$2,000
+  - Ledger and flashing repair: $1,500–$3,500
+  - Full deck rebuild: $8,000–$25,000+ (varies by size)
+  - Stain/seal only: $5–$8 per square foot
+
+  Most jobs take 1–3 days for material and labor.
+
+  ## Prevention
+
+  - Clean gutters every spring and fall. Leaves and fir needles block water and cause pooling.
+- Keep the deck slope pointing away from your house (minimum 1:100 slope, so water runs downhill).
+  - Seal or stain the deck every 2–3 years. It's cheap insurance; $1,000 today beats a $15,000 rebuild later.
+  - Inspect the ledger annually. Look for water staining on your rim joist (the band of wood where the deck meets the house). If you see darkening, rot is starting.
+  - Trim branches that hang over the deck. They drop debris and block air circulation, keeping the wood wet.
+
+  ## Why Hire a Professional
+
+  Deck building and repair has real safety stakes—a railing failure or structural collapse can injure someone. We know the local frost line, understand Vancouver Island's rain patterns, and use stainless or structural fasteners that won't rust in a decade. We also know what the building department requires (if your deck ever gets inspected or you sell the house, unpermitted work becomes your problem).
+
+  Ready to get your deck fixed?
+
+  <fragment slot="related">
+    <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Pressure Washing</h3>
+      <p class="text-sm text-slate-600">Clean decks before staining.</p>
+    </a>
+    <a href="/gutter-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Gutter Cleaning</h3>
+      <p class="text-sm text-slate-600">Prevent water pooling on decks.</p>
+    </a>
+    <a href="/fence-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Fence Repair</h3>
+      <p class="text-sm text-slate-600">Similar rot and weathering issues.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Odd Jobs</h3>
+      <p class="text-sm text-slate-600">Add stairs, planters, or railing updates.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

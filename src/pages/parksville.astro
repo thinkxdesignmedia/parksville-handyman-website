@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config, pages } from '../config';
+
+const page = pages.areas.parksville;
+const canonicalUrl = new URL(`/${page.slug}`, Astro.url).href;
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  keywords={page.keyword}
+  canonicalUrl={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://parksvillehandyman.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Parksville"
+      }
+    ]
+  })}></script>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav class="py-6 text-sm text-slate-600">
+      <a href="/" class="hover:text-orange-600">Home</a>
+      <span class="mx-2">/</span>
+      <span>Parksville</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Handyman Services in Parksville</h1>
+      <p class="text-lg text-slate-600 mb-8">
+        {config.businessName} serves Parksville homeowners and renters with fast, reliable repairs and maintenance. Deck damage, gutter clogs, fence rot, drywall holes—we fix it.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="tel:{config.phone}" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded">
+          📞 Call {config.phone}
+        </a>
+        <a href="#quote-form" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-50 font-bold py-3 px-6 rounded">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+
+    <!-- Local Context -->
+    <article class="prose prose-lg max-w-none py-12 border-t border-slate-200">
+      <h2>Why Parksville Homes Need Regular Maintenance</h2>
+
+      <p>Parksville's climate is tough on homes. You get 1,400+ mm of rain annually, with most falling between October and March. The winters are mild but wet, which means water sits in wood, gutters, and on decks. Combined with salt-air spray (we're close to the coast) and strong Island winds, your home takes real punishment.</p>
+
+      <h3>Common Parksville Issues</h3>
+
+      <p><strong>Deck rot and weathering</strong> — Decks are exposed to constant moisture and salt spray. Boards soften within 5–10 years without maintenance. Ledger boards (where decks attach to houses) fail first—water runs behind the flashing and rots the rim joist. We've replaced dozens of rotten ledgers that started as small drips.</p>
+
+      <p><strong>Gutter clogs</strong> — Parksville has plenty of trees (good for aesthetics, bad for gutters). Leaves, needles, and seeds clog gutters every fall and spring. Clogged gutters fail and water runs down the fascia, rotting it and pooling at the foundation. Gutter cleaning every spring and fall is non-negotiable here.</p>
+
+      <p><strong>Fence sagging</strong> — The soil is clay-heavy in much of Parksville, and clay heaves in winter. Posts settle unevenly, and fences lean. Older wooden fences rot faster because the wet climate keeps them constantly damp.</p>
+
+      <p><strong>Drywall cracks from settlement</strong> — Homes built on clay shift with seasonal moisture changes. Drywall cracks appear in fall when soil dries, and you see more movement in spring. These are common and fixable.</p>
+
+      <p><strong>Weatherstripping failure</strong> — The constant rain means windows and doors leak. Weatherstripping fails faster due to moisture and UV. Replacing it annually can save $500+ per year in heating costs.</p>
+
+      <h3>Preventive Maintenance in Parksville</h3>
+
+      <p>Parksville homes need a maintenance calendar:</p>
+      <ul>
+        <li><strong>Spring (April–May)</strong> — Inspect deck, fence, and roof after winter. Clean gutters. Check for water damage from winter storms. Caulk windows and doors.</li>
+        <li><strong>Summer (June–August)</strong> — Stain and seal decks and fences. This is the dry season—the only time wood dries enough for finish to cure properly.</li>
+        <li><strong>Fall (September–October)</strong> — Clear gutters before leaves drop. Inspect exterior caulk. Check attic for water stains (sign of roof leaks). Trim branches over the roof.</li>
+        <li><strong>Winter (November–March)</strong> — Monitor for ice dams on the roof (poor attic ventilation traps heat, melts snow, which refreezes at the edge). Watch for water stains on ceilings. Check foundation for new cracks or water intrusion.</li>
+      </ul>
+
+      <p>We can help with any of these. Many customers schedule annual inspections in spring—we walk the property, catch small issues before they become big ones, and prioritize the work.</p>
+
+      <h2>Service Availability in Parksville</h2>
+
+      <p>We serve all of Parksville from Morison Creek to Craig Road, including:</p>
+      <ul>
+        <li>Downtown and Old Parksville (older homes, more maintenance needed)</li>
+        <li>Fairwinds and gated communities (we're familiar with local property managers)</li>
+        <li>Surrounding neighborhoods out to Denman Road</li>
+      </ul>
+
+      <p>Same-day or next-day service is often possible for urgent jobs (water damage, storm cleanup, broken doors). Call or fill out our quote form.</p>
+
+      <h2>Local Housing Stock in Parksville</h2>
+
+      <p><strong>Ranches and bungalows (1960s–1980s)</strong> — These homes are solid but getting old. Decks, fences, and roofs were built 20+ years ago and are nearing end-of-life. Foundation cracks are common due to clay soil shifting. We do a lot of maintenance on these.</p>
+
+      <p><strong>Newer homes (1990s–2010s)</strong> — Often built with vinyl siding and engineered wood. Maintenance is less intensive but still needed. Vinyl doesn't rot but needs annual cleaning. Windows and doors still fail on the same schedule.</p>
+
+      <p><strong>Rentals and investment properties</strong> — If you're a property manager or landlord, we understand turnovers and maintenance. Quick, quality repairs mean less downtime and tenant satisfaction.</p>
+    </article>
+
+    <!-- Service Grid -->
+    <section class="py-12 border-t border-slate-200">
+      <h2 class="text-2xl font-bold mb-6">Services Available in Parksville</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/deck-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Deck Repair</h3>
+          <p class="text-sm text-slate-600">Rotten boards, sagging, staining</p>
+        </a>
+        <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Drywall Repair</h3>
+          <p class="text-sm text-slate-600">Cracks, holes, water stains</p>
+        </a>
+        <a href="/fence-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Fence Repair</h3>
+          <p class="text-sm text-slate-600">Posts, boards, gates</p>
+        </a>
+        <a href="/gutter-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Gutter Cleaning</h3>
+          <p class="text-sm text-slate-600">Clogs, repair, installation</p>
+        </a>
+        <a href="/bathroom-fixtures" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Bathroom Fixtures</h3>
+          <p class="text-sm text-slate-600">Faucets, toilets, drains</p>
+        </a>
+        <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Door & Window Repair</h3>
+          <p class="text-sm text-slate-600">Locks, hinges, weatherstripping</p>
+        </a>
+        <a href="/furniture-assembly" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Furniture Assembly</h3>
+          <p class="text-sm text-slate-600">IKEA, TV mounting, shelves</p>
+        </a>
+        <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+          <h3 class="font-bold text-slate-900">Pressure Washing</h3>
+          <p class="text-sm text-slate-600">Decks, driveways, siding</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="quote-form" class="bg-orange-50 rounded-lg p-8 my-12">
+      <h2 class="text-2xl font-bold mb-4">Get a Free Estimate</h2>
+      <form action="/api/quote" method="POST" class="space-y-4">
+        <input type="hidden" name="area" value="parksville" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <textarea
+          name="description"
+          placeholder="What needs fixing?"
+          rows="4"
+          required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded transition"
+        >
+          Get a Free Estimate
+        </button>
+      </form>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.fenceRepair;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Fences sag, lean, rot, and blow over. We repair sagging posts, replace rotten boards, fix gates that won't close, and secure loose panels. Stain and seal too.
+  </fragment>
+
+  ## Why Fences Fail
+
+  **Leaning posts** — Posts settle unevenly or the concrete footing heaves in freeze-thaw cycles. The fence leans away from the property line (never good) or into it. Posts buried in the ground without concrete rot from ground moisture. We see pressure-treated posts last 15–20 years; cedar lasts 8–12 unless sealed annually.
+
+  **Rotten boards** — Water sits on horizontal surfaces (top rails, fence caps). Bottom boards get splashed with soil water. Posts touch soil directly and wick moisture. All lead to rot. Rotten wood becomes spongy, splinters, and eventually crumbles.
+
+  **Sagging gates** — Gates fail at the hinges (hinges pull loose or rust), at the latch (won't close because the frame is twisted), or at the bottom (bottom rail sags and drags). The frame is often racked (twisted out of square).
+
+  **Storm damage** — High winds push panels and blow entire sections over. Weak posts and old fasteners make this worse.
+
+  ## What We Repair
+
+  **Post replacement** — A rotten post needs to come out. We either dig it out (if concrete is shallow) or cut it below grade and pour a new concrete footing around it. New post goes in pressure-treated 4x4 or 6x6, depending on height and span. Posts should be spaced 4–6 feet apart for residential fencing.
+
+  **Leaning post bracing** — If the post isn't rotted but is leaning, we can sometimes brace it with diagonal supports or sister-cut a new post alongside it. This works for light-duty repairs but isn't a permanent fix.
+
+  **Board replacement** — Rotten boards get removed and replaced with PT lumber matching the original profile. We use stainless or galvanized fasteners (regular nails rust and stain).
+
+  **Gate repair** — Hinges get re-secured with longer bolts into solid wood. If the frame is racked (not square), we brace it with diagonal support while we work, straighten it, and add a diagonal brace to the frame. Latches get adjusted or replaced.
+
+  **Staining and sealing** — If the fence just needs preventive maintenance, we seal or stain it. Solid stain lasts 3–5 years; semi-transparent 4–7 years. Sealing extends wood life significantly.
+
+  ## Cost & Timeline
+
+  - Board replacement (per board): $50–$150
+  - Single post replacement: $500–$1,500
+  - Gate repair or rehang: $300–$800
+  - Fence stain/seal (per linear foot): $2–$4
+  - Full fence rebuild (per linear foot): $30–$60
+
+  Most repairs take 1–3 days.
+
+  ## Prevention
+
+  - Seal or stain wood every 2–3 years.
+  - Keep soil and mulch away from the base of fence posts.
+  - Trim vegetation that leans on the fence (adds wind load).
+  - Check hinges and posts after storms.
+  - Replace rotten boards early before they cause structural failure.
+
+  ## Building Code Notes
+
+  Most residential fences can be built to property line, but some municipalities have setback rules or height limits. Boundary fences may have shared responsibility—check your local bylaws before rebuilding. We can help navigate this.
+
+  ## Why Hire a Pro
+
+  A leaning fence is a liability. If it falls and damages your neighbor's property or injures someone, you could be liable. A properly built fence uses the right post depth, correct fasteners, and a square frame. We ensure it's done right and will last.
+
+  <fragment slot="related">
+    <a href="/deck-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Deck Repair</h3>
+      <p class="text-sm text-slate-600">Similar rot and weathering issues.</p>
+    </a>
+    <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Pressure Washing</h3>
+      <p class="text-sm text-slate-600">Clean fence before sealing.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Add fence caps, rails, or gates.</p>
+    </a>
+    <a href="/qualicum-beach" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Qualicum Beach</h3>
+      <p class="text-sm text-slate-600">Local fence repair service.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

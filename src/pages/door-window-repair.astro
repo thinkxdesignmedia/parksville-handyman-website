@@ -1,0 +1,105 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.doorWindowRepair;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Sticky windows, doors that won't close, broken locks, rotted frames, cracked glass. We fix and maintain doors and windows. Weatherstripping, locks, hinges, and frame repair.
+  </fragment>
+
+  ## Common Door and Window Issues
+
+  **Sticky windows and doors** — Paint buildup, swelling from humidity, or paint sealing the wood. The window or door binds partway through opening. Humidity on the Island makes this worse in fall and winter.
+
+  **Broken locks and latches** — Door locks seize from rust. Latch bolts stick. Window locks fail to engage. These become security issues.
+
+  **Rotted or damaged frames** — Water sits against the frame (especially on the sill of windows), and the wood rots. Frames pull away from the wall or crack.
+
+  **Loose hinges** — Hinges sag or pull away from the jamb. The door or window hangs unevenly.
+
+  **Cracked or fogged glass** — Thermal seals fail in double-pane windows, allowing moisture between panes. Single-pane windows crack from temperature changes or impact.
+
+  **Drafts and air leaks** — Missing or compressed weatherstripping, gaps at the jamb, or failed caulk let cold air in and heated air out.
+
+  ## What We Fix
+
+  **Freeing stuck windows and doors** — We identify the bind point, sand or plane the frame/jamb as needed, and reapply weatherstripping. If paint sealed it shut, we score the paint line and free it carefully.
+
+  **Lock repair and replacement** — Stuck locks get lubricated or rebuilt. Broken locks get replaced. We install new deadbolts, handle sets, and key locks.
+
+  **Hinge repair** — Loose hinges get tightened. Stripped screw holes get repaired with wooden toothpicks and glue, then re-screwed. Broken hinges get replaced.
+
+  **Frame repair** — Minor rot gets cut out, filled with epoxy wood filler, and stained. Extensive rot means frame replacement (which is more involved). We also recaulk frames to seal against weather.
+
+  **Weatherstripping** — Old, compressed, or missing weatherstripping gets replaced. We use foam, rubber, or vinyl strips depending on the application.
+
+  **Glass replacement** — Cracked or fogged panes get replaced. For single-pane windows, we remove the old glass, clean the frame, and install new glass with new glazing points and putty. For double-pane windows, the entire sash or frame may need replacement.
+
+  **Sash cord replacement** — Old wooden sash windows have weights and pulleys inside the jamb. Cords snap and the window won't stay open. We replace cords without removing the sash (most of the time).
+
+  ## When to Replace vs. Repair
+
+  **Repair if:**
+  - Frame is solid (no soft wood)
+  - Glass is repairable
+  - Hardware can be sourced
+  - Window/door opens and closes (even if stiff)
+
+  **Replace if:**
+  - Frame is rotten (more than 25% of the perimeter)
+  - Energy efficiency matters (old single-pane windows waste heat)
+  - The sash or jamb is cracked
+  - Multiple systems are failing
+
+  ## Cost & Timeline
+
+  - Unsticking a window: $150–$350
+  - Lock repair: $100–$250
+  - Lock replacement: $200–$500
+  - Weatherstripping replacement: $150–$400
+  - Single-pane glass replacement: $150–$300
+  - Sash cord replacement: $200–$400
+  - Frame repair: $300–$800
+  - Full window/door replacement: $500–$2,000+ per unit
+
+  Most repairs take 1–2 hours.
+
+  ## Prevention
+
+  - Caulk and seal frames annually (spring and fall).
+  - Lubricate hinges and locks quarterly with light machine oil.
+  - Keep weep holes at the sill clear (small drain holes that let water out).
+  - Trim vegetation away from windows and doors.
+  - Paint frames every 5–7 years to protect wood.
+
+  ## Why Hire a Pro
+
+  Window and door repair requires precision. A frame installed 1/8 inch out of square will bind. We have the tools to check plumb and square, remove and reglaze glass safely, and match existing paint and hardware.
+
+  <fragment slot="related">
+    <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Drywall Repair</h3>
+      <p class="text-sm text-slate-600">Patch walls around new frames.</p>
+    </a>
+    <a href="/pressure-washing" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Pressure Washing</h3>
+      <p class="text-sm text-slate-600">Clean frames before maintenance.</p>
+    </a>
+    <a href="/small-renovations" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Small Renovations</h3>
+      <p class="text-sm text-slate-600">Interior trim and finishing around doors.</p>
+    </a>
+    <a href="/qualicum-beach" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Serving Qualicum Beach</h3>
+      <p class="text-sm text-slate-600">Local door and window repair.</p>
+    </a>
+  </fragment>
+</ServiceLayout>

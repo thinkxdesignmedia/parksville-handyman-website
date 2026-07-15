@@ -1,0 +1,107 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { pages } from '../config';
+
+const page = pages.services.oddJobs;
+---
+
+<ServiceLayout
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  serviceSlug={page.slug}
+>
+  <fragment slot="intro">
+    Whatever needs doing around your home. Odd jobs, small projects, repairs, and upgrades. No job too small or weird.
+  </fragment>
+
+  ## Types of Jobs We Handle
+
+  **Hanging and mounting** — shelves, mirrors, artwork, TV brackets, towel racks, light fixtures.
+
+  **Trim and finishing** — baseboard, crown molding, caulking, finishing edges around doors and windows.
+
+  **Minor plumbing** — removing old fixtures, installing new ones, fixing P-traps, adjusting water pressure.
+
+  **Cabinet and furniture** — adjusting cabinet doors, fixing drawer slides, tightening hinges.
+
+  **Painting** — interior trim, touch-ups, refresh a room. We don't do full exterior house painting, but we handle trim and small jobs.
+
+  **Sealing and caulking** — kitchen counters, bathroom tiles, door and window frames, gaps and cracks.
+
+  **Attic and basement** — loose insulation, vapor barrier, dehumidifier installation, minor cleanup.
+
+  **Exterior trim** — soffit, fascia, trim repair or replacement, eavestrough brackets.
+
+  **Gate and fence extras** — hinges, latches, trim, posts, crossbeams.
+
+  **Electrical (non-licensed work)** — outlet replacement, light switch installation, ceiling fan mounting (to existing rough-in). Anything requiring new wiring runs is licensed electrician work—we'll tell you upfront.
+
+  **Appliance hookup** — installing a dishwasher, oven, range hood (to existing rough-in).
+
+  **Snow and storm repairs** — broken branches, loose roof trim, gutter damage from ice dams, shutters blown off.
+
+  **Holiday and seasonal** — deck lighting, outdoor outlet installation, winterization prep.
+
+  ## What We Don't Do
+
+  - Electrical work requiring new circuits (licensed electrician only)
+  - Plumbing work requiring new rough-in (licensed plumber)
+  - Gas line work (licensed plumber/HVAC tech)
+  - Roof work (specialists only)
+  - Foundation or structural work
+  - Asbestos, mold, or hazardous material removal
+  - Demolition or major renovations (we can help, but it's often a licensed contractor job)
+
+  If a job needs a license, we'll tell you and recommend someone.
+
+  ## Cost & Timeline
+
+  Most odd jobs are quoted by the job or by the hour ($75–$150/hour depending on complexity).
+
+  - Simple mounting (shelf, mirror, bracket): $100–$300
+  - Cabinet adjustment or repair: $150–$300
+  - Caulking and sealing (per linear foot): $2–$5
+  - Trim installation (per linear foot): $5–$15
+  - Painting a room (labor only): $500–$1,500
+  - Snow/storm cleanup: $300–$1,000
+
+  Most jobs take a few hours to a full day.
+
+  ## How to Describe an Odd Job
+
+  When you call or email, be specific:
+  - What's the current condition? (broken, missing, old, doesn't work, unsightly)
+  - What's the location? (kitchen, deck, basement, bathroom)
+  - What do you want the end result to be? (repaired, replaced, new installation, finished/sealed)
+  - Photos help us quote accurately.
+
+  We'll assess on-site if needed and give you an estimate before starting.
+
+  ## Why Hire a Pro for Small Jobs
+
+  Small jobs add up. You can spend a weekend chasing one project, acquire tools you'll use once, and end up frustrated. We finish fast, clean up after ourselves, and make it look like it was always there. Your time is valuable—sometimes paying for the fix is the better deal.
+
+  ## Philosophy
+
+  We believe in doing small jobs right. A poorly installed shelf falls down and damages your wall. Caulk applied wrong looks bad for years. We take the same care on a $200 job as a $5,000 job.
+
+  <fragment slot="related">
+    <a href="/drywall-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Drywall Repair</h3>
+      <p class="text-sm text-slate-600">Patch holes from shelving and mounting.</p>
+    </a>
+    <a href="/door-window-repair" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Door & Window Repair</h3>
+      <p class="text-sm text-slate-600">Trim, locks, and weatherproofing.</p>
+    </a>
+    <a href="/bathroom-fixtures" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Bathroom Fixtures</h3>
+      <p class="text-sm text-slate-600">Vanity upgrades and accessory installation.</p>
+    </a>
+    <a href="/handyman-pricing-bc" class="border border-slate-200 rounded p-4 hover:border-orange-600 transition">
+      <h3 class="font-bold text-slate-900 mb-1">Pricing Guide</h3>
+      <p class="text-sm text-slate-600">Understand handyman costs in BC.</p>
+    </a>
+  </fragment>
+</ServiceLayout>
