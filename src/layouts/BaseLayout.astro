@@ -108,6 +108,35 @@ const fullTitle = `${title} | Parksville Handyman`;
         display: block;
       }
 
+      /* Screen reader only */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .focus\:not-sr-only:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: inherit;
+        margin: inherit;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        display: inline-block;
+        background: #ea580c;
+        color: white;
+        padding: 0.5rem 1rem;
+        z-index: 9999;
+      }
+
       .cf-turnstile {
         margin: 1rem 0;
       }
@@ -129,6 +158,9 @@ const fullTitle = `${title} | Parksville Handyman`;
     </style>
   </head>
   <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main" class="skip-to-content sr-only focus:not-sr-only">Skip to main content</a>
+
     <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <a href="/" class="text-xl font-bold text-slate-900 hover:text-orange-600">
@@ -148,7 +180,7 @@ const fullTitle = `${title} | Parksville Handyman`;
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <slot />
     </main>
 
