@@ -30,13 +30,18 @@ const fullTitle = `${title} | Parksville Handyman`;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={config.businessName} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={canonicalUrl || Astro.url.href} />
+    <meta property="og:image" content={ogImage || 'https://parksvillehandyman.ca/og-default.png'} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={description} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:image" content={ogImage || 'https://parksvillehandyman.ca/og-default.png'} />
+    <meta name="twitter:image:alt" content={description} />
 
     <!-- Icons & Manifest -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -51,6 +56,19 @@ const fullTitle = `${title} | Parksville Handyman`;
 
     <!-- Turnstile script -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- GA4 -->
+    <script is:inline define:vars={{ gaPropertyId: config.gaPropertyId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaPropertyId, {
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
+    </script>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${config.gaPropertyId}`}></script>
 
     <style is:global>
       * {

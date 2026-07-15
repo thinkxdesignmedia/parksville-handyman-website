@@ -15,6 +15,9 @@ export const config = {
 
   // SEO
   localBusinessType: 'HomeAndConstructionBusiness',
+
+  // GA4
+  gaPropertyId: 'G-XXXXXXXXXX', // TODO: Replace with actual GA4 Measurement ID
 };
 
 // Page-level SEO config

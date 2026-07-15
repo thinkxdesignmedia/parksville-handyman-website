@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1e293b"/>
+
+  <!-- Gradient accent -->
+  <defs>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c2410c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#accentGrad)" opacity="0.15"/>
+
+  <!-- Tool icon -->
+  <g transform="translate(150, 150)">
+    <!-- Wrench -->
+    <g transform="translate(100, 100) rotate(-45)">
+      <rect x="-15" y="-60" width="30" height="70" rx="15" fill="#ea580c"/>
+      <circle cx="0" cy="25" r="25" fill="#ea580c"/>
+      <circle cx="0" cy="25" r="12" fill="#1e293b"/>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <text x="420" y="180" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">
+    Parksville
+  </text>
+  <text x="420" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="#ea580c">
+    Handyman
+  </text>
+  <text x="420" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#cbd5e1">
+    Local Services. Free Estimates.
+  </text>
+
+  <!-- Footer tagline -->
+  <text x="60" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">
+    Deck repair • Drywall • Gutters • Fences • And more
+  </text>
+</svg>
