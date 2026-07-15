@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../config';
+
+const canonicalUrl = new URL('/terms', Astro.url).href;
+---
+
+<BaseLayout
+  title="Terms of Service | Parksville Handyman"
+  description="Terms and conditions for using our website and services."
+  canonicalUrl={canonicalUrl}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-4xl font-bold mb-8">Terms of Service</h1>
+
+    <p class="text-slate-600 mb-8"><strong>Last updated:</strong> January 2025</p>
+
+    <div class="prose prose-lg max-w-none space-y-8">
+      <section>
+        <h2>Agreement to Terms</h2>
+        <p>
+          By accessing and using {config.businessName} ("Site"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Use License</h2>
+
+        <p>
+          We grant you a limited, non-exclusive, non-transferable license to view and use the Site for personal, non-commercial purposes. You agree not to:
+        </p>
+        <ul>
+          <li>Modify or copy materials or content from the Site</li>
+          <li>Use this Site for commercial purposes or for any commercial endeavor without our written consent</li>
+          <li>Attempt to decompile or reverse-engineer any software contained on the Site</li>
+          <li>Remove any copyright or proprietary notices from the Site</li>
+          <li>Access this Site through any technology or means other than those provided by us</li>
+          <li>Use automated systems (bots, scrapers) to access the Site without permission</li>
+          <li>Harass, threaten, embarrass, or cause distress or discomfort to any individual</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Disclaimers</h2>
+
+        <p>
+          The materials on {config.businessName} are provided on an "as is" basis. {config.businessName} makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+        </p>
+
+        <p>
+          Further, {config.businessName} does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on the Internet web site or otherwise relating to such materials or on any sites linked to this Site.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Limitations</h2>
+
+        <p>
+          In no event shall {config.businessName} or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on {config.businessName}, even if {config.businessName} or an authorized representative has been notified orally or in writing of the possibility of such damage.
+        </p>
+
+        <p>
+          Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Accuracy of Materials</h2>
+
+        <p>
+          The materials appearing on {config.businessName} could include technical, typographical, or photographic errors. {config.businessName} does not warrant that any of the materials on its web site are accurate, complete, or current. {config.businessName} may make changes to the materials contained on its web site at any time without notice.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Links</h2>
+
+        <p>
+          {config.businessName} has not reviewed all of the sites linked to its web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by {config.businessName} of the site. Use of any such linked web site is at the user's own risk.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Modifications</h2>
+
+        <p>
+          {config.businessName} may revise these terms of service for its web site at any time without notice. By using this web site, you are agreeing to be bound by the then current version of these terms of service.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Quote Requests & Lead Sharing</h2>
+
+        <p>
+          When you submit a quote request through this Site:
+        </p>
+        <ul>
+          <li>You authorize us to share your information with the local service provider operating under the {config.businessName} brand</li>
+          <li>You consent to being contacted by that service provider via phone, email, or text message</li>
+          <li>The service provider will use your information to provide an estimate and discuss your project</li>
+          <li>Your information will be handled according to our Privacy Policy</li>
+        </ul>
+
+        <p>
+          The service provider operating this brand is an independent business partner and is solely responsible for the quality and conduct of their work. We do not guarantee any specific outcome or timeline for projects.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. No Professional Advice</h2>
+
+        <p>
+          Information and content provided on this Site is for informational purposes only and is not intended as professional advice. While we strive for accuracy, we do not warrant the completeness or accuracy of any content. Always consult with a licensed professional before making decisions about home repairs or construction.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. User Content & Submissions</h2>
+
+        <p>
+          Any information you provide through quote requests, feedback forms, or other submission areas remains your property. However, by submitting information to us, you grant us a non-exclusive, royalty-free license to use, modify, and display that information for our business purposes (including sharing with service providers and for marketing analysis).
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Governing Law</h2>
+
+        <p>
+          These terms and conditions are governed by and construed in accordance with the laws of the Province of British Columbia, Canada, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Contact</h2>
+
+        <p>
+          If you have questions about these Terms of Service, please contact us:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> {config.email}</li>
+          <li><strong>Phone:</strong> {config.phone}</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

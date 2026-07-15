@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#1e293b"/>
+
+  <!-- Wrench icon (rotated 45°) -->
+  <g transform="translate(100, 100)">
+    <!-- Handle -->
+    <rect x="-15" y="-60" width="30" height="70" rx="15" fill="#ea580c"/>
+
+    <!-- Head (hex shape approximation) -->
+    <circle cx="0" cy="25" r="25" fill="#ea580c"/>
+
+    <!-- Bolt detail in center -->
+    <circle cx="0" cy="25" r="12" fill="#1e293b"/>
+  </g>
+</svg>

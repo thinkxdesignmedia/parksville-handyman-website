@@ -148,7 +148,8 @@ const canonicalUrl = new URL('/', Astro.url).href;
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold mb-4 text-center">Get a Free Estimate</h2>
       <p class="text-center text-slate-600 mb-8">Tell us what you need fixed. We'll get back to you within 24 hours.</p>
-      <form action="/api/quote" method="POST" class="space-y-4">
+      <div id="quote-form-status"></div>
+      <form id="quote-form-element" action="/api/quote" method="POST" class="space-y-4">
         <input
           type="text"
           name="name"
@@ -161,6 +162,12 @@ const canonicalUrl = new URL('/', Astro.url).href;
           name="phone"
           placeholder="Your Phone"
           required
+          class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email (optional)"
           class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
         />
         <select
@@ -185,6 +192,10 @@ const canonicalUrl = new URL('/', Astro.url).href;
           rows="4"
           class="w-full px-4 py-2 border border-slate-300 rounded focus:ring-2 focus:ring-orange-600 focus:border-transparent"
         ></textarea>
+        <!-- Honeypot field (hidden from users) -->
+        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off" />
+        <!-- Turnstile widget -->
+        <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITE_KEY" data-theme="light"></div>
         <button
           type="submit"
           class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded text-lg transition"
@@ -195,6 +206,34 @@ const canonicalUrl = new URL('/', Astro.url).href;
           We'll reach out within 24 hours. No spam, ever.
         </p>
       </form>
+      <script>
+        document.getElementById('quote-form-element')?.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const form = e.target as HTMLFormElement;
+          const statusDiv = document.getElementById('quote-form-status');
+
+          try {
+            const response = await fetch('/api/quote', {
+              method: 'POST',
+              body: new FormData(form)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              statusDiv!.innerHTML = '<div class="form-success">✓ Quote request submitted! We\'ll contact you within 24 hours.</div>';
+              form.reset();
+              if (window.turnstile) {
+                window.turnstile.reset();
+              }
+            } else {
+              statusDiv!.innerHTML = `<div class="form-error">Error: ${data.message || 'Failed to submit. Please try again.'}</div>`;
+            }
+          } catch (error) {
+            statusDiv!.innerHTML = '<div class="form-error">Network error. Please check your connection and try again.</div>';
+          }
+        });
+      </script>
     </div>
   </section>
 
